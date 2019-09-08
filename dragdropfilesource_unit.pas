@@ -79,8 +79,8 @@ type
 
     { ========== Funktionen für ext. Aufruf ========== }
     procedure KillFiles;
-    procedure LoadFile(filename: string);
-    procedure LoadFiles(filenames: RDragdropfiles);
+    procedure LoadFile(const filename: string);
+    procedure LoadFiles(const filenames: RDragdropfiles);
     function CheckFiles: boolean;
 
     procedure StartDragDrop(Sender: TControl; At: TPoint);
@@ -192,7 +192,7 @@ begin
   setlength(Fdragdropfiles.dateinamen, 0);
 end;
 
-procedure TDragDropSource.LoadFile(filename: string);
+procedure TDragDropSource.LoadFile(const filename: string);
 begin
   { DragDrop vorbereiten }
   if (length(filename) > 0) then { Quelldatei übergeben }
@@ -208,7 +208,7 @@ begin
   end;
 end;
 
-procedure TDragDropSource.LoadFiles(filenames: RDragdropfiles);
+procedure TDragDropSource.LoadFiles(const filenames: RDragdropfiles);
 begin
   { DragDrop vorbereiten }
   if (length(filenames.verzeichnis) > 0) and { Quellverzeichnis übergeben }
