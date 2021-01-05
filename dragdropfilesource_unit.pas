@@ -1,4 +1,4 @@
-﻿{ Datei Drag&Drop Quelle
+{ Datei Drag&Drop Quelle
   für Drag&Drop zum Explorer
 
   aktueller Stand:
@@ -118,7 +118,7 @@ end;
 
 {$IFDEF FPC}
 
-function TDragDropQuelle.QueryContinueDrag(fEscapePressed: BOOL;
+function TDragDropSource.QueryContinueDrag(fEscapePressed: BOOL;
   grfKeyState: DWORD): HResult; StdCall;
 {$ELSE}
 
@@ -154,7 +154,7 @@ end;
 
 {$IFDEF FPC}
 
-function TDragDropQuelle.GiveFeedback(dwEffect: DWORD): HResult; StdCall;
+function TDragDropSource.GiveFeedback(dwEffect: DWORD): HResult; StdCall;
 {$ELSE}
 
 function TDragDropSource.GiveFeedback(dwEffect: Longint): HResult; stdcall;
